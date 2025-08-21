@@ -29,7 +29,8 @@
     "submit": "提交",
     "switchLanguage": "切换语言",
     "switchRunning": "运行开关",
-    "switchTheme": "切换主题"
+    "switchTheme": "切换主题",
+    "update link": "更新链接"
   },
   "address": "地址",
   "allowInsecure": "允许不安全",
@@ -80,6 +81,14 @@
     "cancel": "不， 我点错了",
     "confirm": "是，我确定",
     "removeConfirmDescription": "你确定要移除这个吗？"
+  },
+  "subscriptionLinkModal": {
+    "title": "更新订阅链接",
+    "description": "输入新的订阅链接",
+    "linkLabel": "订阅链接",
+    "linkPlaceholder": "输入订阅链接",
+    "updateButton": "更新",
+    "cancelButton": "取消"
   },
   "connected": "已连接",
   "connecting options": "连接选项",

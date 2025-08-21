@@ -17,6 +17,7 @@ import { ImportResourceFormModal } from '~/components/ImportResourceFormModal'
 import { QRCodeModal, QRCodeModalRef } from '~/components/QRCodeModal'
 import { Section } from '~/components/Section'
 import { UpdateSubscriptionAction } from '~/components/UpdateSubscriptionAction'
+import { UpdateSubscriptionLinkAction } from '~/components/UpdateSubscriptionLinkAction'
 import { DraggableResourceType } from '~/constants'
 
 export const SubscriptionResource = () => {
@@ -75,6 +76,7 @@ export const SubscriptionResource = () => {
               >
                 <IconEye />
               </ActionIcon>
+              <UpdateSubscriptionLinkAction id={subscriptionID} currentLink={link} />
               <UpdateSubscriptionAction id={subscriptionID} loading={updateSubscriptionsMutation.isLoading} />
             </Fragment>
           }

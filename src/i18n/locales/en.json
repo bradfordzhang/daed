@@ -29,7 +29,8 @@
     "submit": "Submit",
     "switchLanguage": "Switch Language",
     "switchRunning": "Switch Running",
-    "switchTheme": "Switch Theme"
+    "switchTheme": "Switch Theme",
+    "update link": "Update Link"
   },
   "address": "address",
   "allowInsecure": "Allow Insecure",
@@ -80,6 +81,14 @@
     "cancel": "No, It's a mistake",
     "confirm": "Yes, I'm sure",
     "removeConfirmDescription": "Are you sure you want to remove this?"
+  },
+  "subscriptionLinkModal": {
+    "title": "Update Subscription Link",
+    "description": "Enter the new subscription link",
+    "linkLabel": "Subscription Link",
+    "linkPlaceholder": "Enter subscription link",
+    "updateButton": "Update",
+    "cancelButton": "Cancel"
   },
   "connected": "connected",
   "connecting options": "Connecting Options",

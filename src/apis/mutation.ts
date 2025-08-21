@@ -847,3 +847,32 @@ export const useUpdateNameMutation = () => {
     },
   })
 }
+
+export const useUpdateSubscriptionLinkMutation = () => {
+  const gqlClient = useGQLQueryClient()
+  const queryClient = useQueryClient()
+
+  return useMutation({
+    mutationFn: ({ id, link }: { id: string; link: string }) => {
+      return gqlClient.request(
+        graphql(`
+          mutation UpdateSubscriptionLink($id: ID!, $link: String!) {
+            updateSubscriptionLink(id: $id, link: $link) {
+              id
+              link
+            }
+          }
+        `),
+        {
+          id,
+          link,
+        },
+      )
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: QUERY_KEY_SUBSCRIPTION })
+      queryClient.invalidateQueries({ queryKey: QUERY_KEY_GROUP })
+      queryClient.invalidateQueries({ queryKey: QUERY_KEY_GENERAL })
+    },
+  })
+}

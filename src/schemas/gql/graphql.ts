@@ -208,6 +208,7 @@ export type Mutation = {
   updatePassword: Scalars['String']['output']
   updateRouting: Routing
   updateSubscription: Subscription
+  updateSubscriptionLink: Subscription
   updateUsername: Scalars['Int']['output']
 }
 
@@ -387,6 +388,11 @@ export type MutationUpdateRoutingArgs = {
 
 export type MutationUpdateSubscriptionArgs = {
   id: Scalars['ID']['input']
+}
+
+export type MutationUpdateSubscriptionLinkArgs = {
+  id: Scalars['ID']['input']
+  link: Scalars['String']['input']
 }
 
 export type MutationUpdateUsernameArgs = {
@@ -835,6 +841,16 @@ export type UpdateNameMutationVariables = Exact<{
 }>
 
 export type UpdateNameMutation = { __typename?: 'Mutation'; updateName: number }
+
+export type UpdateSubscriptionLinkMutationVariables = Exact<{
+  id: Scalars['ID']['input']
+  link: Scalars['String']['input']
+}>
+
+export type UpdateSubscriptionLinkMutation = {
+  __typename?: 'Mutation'
+  updateSubscriptionLink: { __typename?: 'Subscription'; id: string; link: string }
+}
 
 export type ModeQueryVariables = Exact<{
   paths?: InputMaybe<Array<Scalars['String']['input']> | Scalars['String']['input']>
@@ -2539,6 +2555,56 @@ export const UpdateNameDocument = {
     },
   ],
 } as unknown as DocumentNode<UpdateNameMutation, UpdateNameMutationVariables>
+export const UpdateSubscriptionLinkDocument = {
+  kind: 'Document',
+  definitions: [
+    {
+      kind: 'OperationDefinition',
+      operation: 'mutation',
+      name: { kind: 'Name', value: 'UpdateSubscriptionLink' },
+      variableDefinitions: [
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'id' } },
+          type: { kind: 'NonNullType', type: { kind: 'NamedType', name: { kind: 'Name', value: 'ID' } } },
+        },
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'link' } },
+          type: { kind: 'NonNullType', type: { kind: 'NamedType', name: { kind: 'Name', value: 'String' } } },
+        },
+      ],
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'Field',
+            name: { kind: 'Name', value: 'updateSubscriptionLink' },
+            arguments: [
+              {
+                kind: 'Argument',
+                name: { kind: 'Name', value: 'id' },
+                value: { kind: 'Variable', name: { kind: 'Name', value: 'id' } },
+              },
+              {
+                kind: 'Argument',
+                name: { kind: 'Name', value: 'link' },
+                value: { kind: 'Variable', name: { kind: 'Name', value: 'link' } },
+              },
+            ],
+            selectionSet: {
+              kind: 'SelectionSet',
+              selections: [
+                { kind: 'Field', name: { kind: 'Name', value: 'id' } },
+                { kind: 'Field', name: { kind: 'Name', value: 'link' } },
+              ],
+            },
+          },
+        ],
+      },
+    },
+  ],
+} as unknown as DocumentNode<UpdateSubscriptionLinkMutation, UpdateSubscriptionLinkMutationVariables>
 export const ModeDocument = {
   kind: 'Document',
   definitions: [
